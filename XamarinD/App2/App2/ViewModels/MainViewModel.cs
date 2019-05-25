@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace App2.ViewModels
-{
-        using Models;    
-        using System;    
-        using System.Collections.ObjectModel;    
+{ 
         public class MainViewModel
     {
         #region Properties        
