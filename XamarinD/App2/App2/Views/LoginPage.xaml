@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="App2.Views.LoginPage">
+    <ContentPage.Content>
+        
+        <ScrollView>
+            <StackLayout
+                Padding="13"
+                BackgroundColor="Bisque">
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Email: "
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        FontSize="20">
+                    </Label>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Email,Mode=TwoWay}"
+                        Placeholder="Ingrese su correo">
+                    </Entry>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalTextAlignment="Center"
+                        Text="Password"
+                        FontSize="20"
+                        TextColor="Black">
+                    </Label>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        IsPassword="True"
+                        Text="{Binding Password,Mode=TwoWay}"
+                        Placeholder="Ingrese su clave">
+                    </Entry>
+                </Grid>
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+                </ActivityIndicator>
+                
+                <Button
+                    Text="Login"
+                    TextColor="DarkMagenta"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Command="{Binding LoginCommand,Mode=TwoWay}"
+                    IsEnabled="{Binding IsEnabled}">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
